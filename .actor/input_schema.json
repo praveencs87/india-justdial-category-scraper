@@ -1,0 +1,36 @@
+{
+    "title": "India Justdial Category Scraper Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "keyword": {
+            "title": "Keyword",
+            "type": "string",
+            "description": "The specific business category (e.g., 'restaurant', 'contractor', 'clinic').",
+            "editor": "textfield",
+            "prefill": "restaurant"
+        },
+        "location": {
+            "title": "Location (City)",
+            "type": "string",
+            "description": "The Indian City (e.g., 'Mumbai', 'Delhi', 'Bangalore').",
+            "editor": "textfield",
+            "prefill": "Mumbai"
+        },
+        "maxLeads": {
+            "title": "Maximum Leads",
+            "type": "integer",
+            "description": "Maximum number of Indian business leads to extract.",
+            "default": 100,
+            "minimum": 1
+        },
+        "proxyConfiguration": {
+            "title": "Proxy Configuration",
+            "type": "object",
+            "description": "Proxy settings. Apify Residential Proxy (India targeted) is highly required.",
+            "prefill": { "useApifyProxy": true },
+            "editor": "proxy"
+        }
+    },
+    "required": ["keyword", "location"]
+}

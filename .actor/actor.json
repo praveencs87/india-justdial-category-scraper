@@ -1,0 +1,36 @@
+{
+    "actorSpecification": 1,
+    "name": "india-justdial-category-scraper",
+    "title": "India Justdial Category Scraper",
+    "description": "Extract verified Indian businesses, service providers, and local shops directly from Justdial. Massive scale B2B lead generation.",
+    "version": "1.0",
+    "input": "./input_schema.json",
+    "dockerfile": "./Dockerfile",
+    "minMemoryMbytes": 1024,
+    "maxMemoryMbytes": 4096,
+    "pricingModel": "PAY_PER_EVENT",
+    "pricingEvents": [
+        {
+            "eventName": "apify-actor-start",
+            "pricePerEvent": 0.25,
+            "description": "Base fee for starting the crawler (Playwright overhead)"
+        },
+        {
+            "eventName": "lead-extracted",
+            "pricePerEvent": 0.0015,
+            "description": "Charged per Indian local business lead successfully extracted ($1.50 per 1k leads)"
+        }
+    ],
+    "isPublic": true,
+    "seoTitle": "India Justdial Business Scraper | High-Volume Lead Extractor",
+    "seoDescription": "Scrape millions of local businesses, contractors, and clinics from Justdial India. Extract phone numbers, WhatsApp contacts, and verified addresses.",
+    "categories": [
+        "LEAD_GENERATION",
+        "BUSINESS"
+    ],
+    "defaultRunOptions": {
+        "build": "latest",
+        "timeoutSecs": 3600,
+        "memoryMbytes": 1024
+    }
+}
