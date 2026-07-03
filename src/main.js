@@ -1,3 +1,4 @@
+import { armKillSwitch, disarmKillSwitch } from './utils/timeoutManager.js';
 import { Actor, log } from 'apify';
 import { PlaywrightCrawler } from 'crawlee';
 
@@ -147,7 +148,9 @@ try {
         url: startUrl
     }]);
 
+    armKillSwitch(crawler);
     await crawler.run();
+    disarmKillSwitch();
 
     log.info(`🎉 Done! Extracted ${extractedCount} India Justdial leads.`);
 
