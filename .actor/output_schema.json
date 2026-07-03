@@ -1,0 +1,11 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "B2B Leads Output",
+  "properties": {
+    "results": {
+      "type": "string",
+      "title": "Extracted Leads",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}
