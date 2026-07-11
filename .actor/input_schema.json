@@ -3,19 +3,14 @@
     "type": "object",
     "schemaVersion": 1,
     "properties": {
-        "keyword": {
-            "title": "Keyword",
-            "type": "string",
-            "description": "The specific business category (e.g., 'restaurant', 'contractor', 'clinic').",
-            "editor": "textfield",
-            "prefill": "restaurant"
-        },
-        "location": {
-            "title": "Location (City)",
-            "type": "string",
-            "description": "The Indian City (e.g., 'Mumbai', 'Delhi', 'Bangalore').",
-            "editor": "textfield",
-            "prefill": "Mumbai"
+        "startUrls": {
+            "title": "Start URLs",
+            "type": "array",
+            "description": "List of search URLs to scrape.",
+            "editor": "requestListSources",
+            "prefill": [
+                { "url": "https://www.justdial.com/Mumbai/Restaurants" }
+            ]
         },
         "maxLeads": {
             "title": "Maximum Leads",
@@ -32,5 +27,5 @@
             "editor": "proxy"
         }
     },
-    "required": ["keyword", "location"]
+    "required": ["startUrls"]
 }
